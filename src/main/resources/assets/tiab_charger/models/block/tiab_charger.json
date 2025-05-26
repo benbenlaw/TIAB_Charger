@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "tiab_charger:block/tiab_charger_top",
+    "east": "tiab_charger:block/tiab_charger_side",
+    "north": "tiab_charger:block/tiab_charger_side",
+    "particle": "tiab_charger:block/tiab_charger_side",
+    "south": "tiab_charger:block/tiab_charger_side",
+    "up": "tiab_charger:block/tiab_charger_top",
+    "west": "tiab_charger:block/tiab_charger_side"
+  }
+}

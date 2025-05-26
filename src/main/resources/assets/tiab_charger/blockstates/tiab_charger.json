@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tiab_charger:block/tiab_charger"
+    }
+  }
+}
