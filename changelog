@@ -1,4 +1,16 @@
 Changelog BBL TIAB Charger
 
+1.0.3
+Fixed RF Per tick amount using way to much energy
+Reduced transfer rate to 100k RF/tick instead of a million
+Updated Logo thanks @Yuki
+
+1.0.2
+Updated texture, thanks @Yuki
+Energy bar is now a texture inside the GUI and not a generated gradient
+Added to the creative menu
+Moved to the TIAB Api
+Changed config name to charger and is now a common not a startup config
+
 1.0.1
 Initial Release

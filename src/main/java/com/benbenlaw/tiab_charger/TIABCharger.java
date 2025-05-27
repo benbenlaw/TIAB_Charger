@@ -7,6 +7,10 @@ import com.benbenlaw.tiab_charger.config.StartupConfig;
 import com.benbenlaw.tiab_charger.item.TIABChargerItems;
 import com.benbenlaw.tiab_charger.screen.TIABChargerScreen;
 import com.benbenlaw.tiab_charger.screen.TIABMenus;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -19,6 +23,8 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.apache.logging.log4j.LogManager;
+import org.mangorage.tiab.common.api.ICommonTimeInABottleAPI;
+import org.mangorage.tiab.common.api.ITiabRegistration;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(TIABCharger.MOD_ID)
@@ -33,7 +39,7 @@ public class TIABCharger {
         TIABChargerBlockEntities.BLOCK_ENTITIES.register(eventBus);
         TIABMenus.MENUS.register(eventBus);
 
-        modContainer.registerConfig(ModConfig.Type.STARTUP, StartupConfig.SPEC, "bbl/tiab_charger/startup.toml");
+        modContainer.registerConfig(ModConfig.Type.COMMON, StartupConfig.SPEC, "bbl/tiab_charger/charger.toml");
 
         eventBus.addListener(this::registerCapabilities);
 
@@ -42,8 +48,15 @@ public class TIABCharger {
     }
 
     private void addItemToCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            //event.accept(FlightBlocksBlocks.FLIGHT_BLOCK.get());
+        ICommonTimeInABottleAPI api = ICommonTimeInABottleAPI.COMMON_API.get();
+        ITiabRegistration registration = api.getRegistration();
+
+        ResourceLocation tabKey = BuiltInRegistries.CREATIVE_MODE_TAB.getKey(registration.getCreativeTab());
+        assert tabKey != null;
+        ResourceKey<CreativeModeTab> tabResourceKey = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), tabKey);
+
+        if (event.getTabKey() == tabResourceKey) {
+            event.accept(TIABChargerBlocks.TIAB_CHARGER.get());
         }
     }
 

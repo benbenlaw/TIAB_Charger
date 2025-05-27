@@ -1,7 +1,9 @@
 package com.benbenlaw.tiab_charger.util;
 
+import com.benbenlaw.tiab_charger.TIABCharger;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 import java.util.List;
@@ -31,7 +33,9 @@ public class EnergyDisplayTooltipArea {
 
     public void render(GuiGraphics guiGraphics) {
         int stored = (int)(height * (energy.getEnergyStored() / (float)energy.getMaxEnergyStored()));
-        guiGraphics.fillGradient(xPos,yPos + (height - stored),xPos + width,
-                yPos + height,0xffb51500, 0xff600b00);
+
+        guiGraphics.blit(ResourceLocation.fromNamespaceAndPath(TIABCharger.MOD_ID, "textures/gui/charger.png"),
+                xPos, yPos + (height - stored), 176, 0, width, stored);
+
     }
 }

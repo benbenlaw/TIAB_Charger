@@ -22,7 +22,7 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.mangorage.tiab.common.items.TiabItem;
+import org.mangorage.tiab.common.api.impl.ITiabItem;
 
 public class TIABChargerBlockEntity extends SyncableBlockEntity implements MenuProvider {
     public final ContainerData data;
@@ -58,7 +58,7 @@ public class TIABChargerBlockEntity extends SyncableBlockEntity implements MenuP
 
     private final ModEnergyStorage ENERGY_STORAGE = createEnergyStorage();
     private ModEnergyStorage createEnergyStorage() {
-        return new ModEnergyStorage(10000000, 1000000) {
+        return new ModEnergyStorage(10000000, 100000) {
             @Override
             public void onEnergyChanged() {
                 setChanged();
@@ -85,8 +85,8 @@ public class TIABChargerBlockEntity extends SyncableBlockEntity implements MenuP
     public void tick() {
         if (!level.isClientSide()) {
             sync();
-            if (itemHandler.getStackInSlot(0).getItem() instanceof TiabItem tiab) {
-                int totalEnergyRequired = ENERGY_PER_CHARGE * SECONDS_PER_CHARGE;
+            if (itemHandler.getStackInSlot(0).getItem() instanceof ITiabItem tiab) {
+                int totalEnergyRequired = ENERGY_PER_CHARGE;
 
                 if (ENERGY_STORAGE.getEnergyStored() >= totalEnergyRequired) {
                     ENERGY_STORAGE.extractEnergy(totalEnergyRequired, false);

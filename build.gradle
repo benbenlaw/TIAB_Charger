@@ -23,6 +23,10 @@ repositories {
             includeGroup("curse.maven")
         }
     }
+
+    maven {
+        url = "https://maven.minecraftforge.net/"
+    }
 }
 
 base {
@@ -71,7 +75,7 @@ dependencies {
     runtimeOnly "curse.maven:bbl-core-1135181:6486837"
 
     //Time In A Bottle
-    compileOnly "curse.maven:time-in-a-bottle-universal-895919:6055930"
+    compileOnly("org.mangorage:tiab:common-api-1.21-1.1.0")
     runtimeOnly "curse.maven:time-in-a-bottle-universal-895919:6055930"
 
     //Mekanism
@@ -112,6 +116,10 @@ publishing {
         }
     }
     repositories {
+
+        maven {
+            url = "https://maven.minecraftforge.net/"
+        }
 
         maven {
             url "https://cursemaven.com"
