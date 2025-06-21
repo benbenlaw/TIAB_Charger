@@ -15,8 +15,9 @@ import java.util.function.Supplier;
 public class TIABChargerBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TIABCharger.MOD_ID);
+
     public static final DeferredBlock<Block> TIAB_CHARGER = registerBlock("tiab_charger",
-            () -> new TIABChargerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_ANDESITE)));
+            () -> new TIABChargerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_ANDESITE).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

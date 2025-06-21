@@ -1,5 +1,9 @@
 Changelog BBL TIAB Charger
 
+1.0.4
+TIAB now renders without Occlusion
+Menu name is now translatable separate from the block name ("block.tiab_charger.tiab_charger_menu")
+
 1.0.3
 Fixed RF Per tick amount using way to much energy
 Reduced transfer rate to 100k RF/tick instead of a million

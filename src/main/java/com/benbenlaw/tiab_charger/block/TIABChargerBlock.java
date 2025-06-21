@@ -54,7 +54,7 @@ public class TIABChargerBlock extends BaseEntityBlock {
 
                 player.openMenu(new SimpleMenuProvider(
                         (windowId, playerInventory, playerEntity) -> new TIABChargerMenu(windowId, playerInventory, blockPos, data),
-                        Component.literal("TIAB Charger")), (buf -> buf.writeBlockPos(blockPos)));
+                        Component.translatable("block.tiab_charger.tiab_charger_menu")), (buf -> buf.writeBlockPos(blockPos)));
 
             }
             return InteractionResult.SUCCESS;
