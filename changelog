@@ -1,5 +1,8 @@
 Changelog BBL TIAB Charger
 
+1.0.5
+TIAB Charger can no longer be sped up with TIAB
+
 1.0.4
 TIAB now renders without Occlusion
 Menu name is now translatable separate from the block name ("block.tiab_charger.tiab_charger_menu")

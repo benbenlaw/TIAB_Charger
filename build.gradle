@@ -76,7 +76,7 @@ dependencies {
 
     //Time In A Bottle
     compileOnly("org.mangorage:tiab:common-api-1.21-1.1.0")
-    runtimeOnly "curse.maven:time-in-a-bottle-universal-895919:6055930"
+    //runtimeOnly "curse.maven:time-in-a-bottle-universal-895919:6664222"
 
     //Mekanism
     compileOnly "curse.maven:mekanism-268560:6327955"
