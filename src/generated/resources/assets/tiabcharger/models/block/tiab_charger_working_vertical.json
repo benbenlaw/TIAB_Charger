@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "tiabcharger:block/tiab_charger_front_working",
+    "side": "tiabcharger:block/tiab_charger_side"
+  }
+}

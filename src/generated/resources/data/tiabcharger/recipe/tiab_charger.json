@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#c:storage_blocks/gold",
+    "B": "minecraft:clock",
+    "C": "#c:storage_blocks/diamond",
+    "D": "minecraft:nether_star"
+  },
+  "pattern": [
+    "ABA",
+    "CDC",
+    "ABA"
+  ],
+  "result": {
+    "id": "tiabcharger:tiab_charger"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "facing=down,running=false": {
+      "model": "tiabcharger:block/tiab_charger_vertical",
+      "x": 180
+    },
+    "facing=down,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working_vertical",
+      "x": 180
+    },
+    "facing=east,running=false": {
+      "model": "tiabcharger:block/tiab_charger",
+      "y": 90
+    },
+    "facing=east,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working",
+      "y": 90
+    },
+    "facing=north,running=false": {
+      "model": "tiabcharger:block/tiab_charger"
+    },
+    "facing=north,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working"
+    },
+    "facing=south,running=false": {
+      "model": "tiabcharger:block/tiab_charger",
+      "y": 180
+    },
+    "facing=south,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working",
+      "y": 180
+    },
+    "facing=up,running=false": {
+      "model": "tiabcharger:block/tiab_charger_vertical"
+    },
+    "facing=up,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working_vertical"
+    },
+    "facing=west,running=false": {
+      "model": "tiabcharger:block/tiab_charger",
+      "y": 270
+    },
+    "facing=west,running=true": {
+      "model": "tiabcharger:block/tiab_charger_working",
+      "y": 270
+    }
+  }
+}
